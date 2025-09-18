@@ -1,0 +1,399 @@
+ :root {
+            --primary-text: #333;
+            --secondary-text: #666;
+            --light-grey: #f0f0f0;
+            --border-color: #ddd;
+            --brand-green: #67D9C4; /* A lighter green from the logo */
+            --brand-blue: #007BFF;
+            --gradient-start: #e6f7f4;
+            --gradient-end: #dff2ff;
+            --card-bg: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--primary-text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-text);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--brand-green);
+        }
+
+        .header-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .header-nav a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            color: var(--primary-text);
+        }
+
+        .header-nav a.user-icon {
+            font-size: 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-text);
+        }
+
+        /* --- Main Content --- */
+        .main-container {
+            /* flex-grow: 1; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* padding: 1rem; */
+            position: relative;
+            overflow: hidden; /* For background elements */
+        }
+        
+        .background-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none; /* Allow clicks to pass through */
+            overflow: hidden;
+            opacity: 0.2;
+        }
+        
+        .background-elements i {
+            position: absolute;
+            font-size: 5rem;
+            color: #ccc;
+            opacity: 0.3;
+        }
+
+      
+
+
+        .welcome-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-text);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Form Card */
+        .form-card {
+            background-color: var(--card-bg);
+            padding: 1rem 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 650px; /* Adjust max-width as needed */
+            text-align: center;
+            z-index: 1;
+        }
+
+        .form-card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: var(--primary-text);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--brand-blue);
+        }
+
+        .forgot-password {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .forgot-password a {
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        .terms-checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .terms-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--brand-blue); /* Style checkbox */
+        }
+
+        .terms-checkbox a {
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .terms-checkbox a:hover {
+            text-decoration: underline;
+        }
+
+        .sign-up-button {
+            width: 100%;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--brand-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .sign-up-button:hover {
+            background-color: #5acfa8; /* Slightly darker green */
+        }
+
+        .or-divider {
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            position: relative;
+        }
+
+        .or-divider::before,
+        .or-divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        .or-divider::before {
+            left: 0;
+        }
+
+        .or-divider::after {
+            right: 0;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .social-button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            color: var(--secondary-text);
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .social-button:hover {
+            background-color: var(--light-grey);
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+        }
+        
+        .login-link {
+            margin: 1rem;
+            text-align: center;
+            width: 100%;
+            /* background-color: red; */
+            color: black;
+        }
+
+        .login-link a {
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem 1.5rem;
+            }
+
+            .header-nav ul {
+                gap: 1rem;
+            }
+
+            .welcome-text {
+                font-size: 1.4rem;
+            }
+
+            .form-card {
+                padding: 2rem;
+                max-width: 90%;
+            }
+
+            .form-card h2 {
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr; /* Stack inputs on small screens */
+                gap: 1rem;
+            }
+
+            .sign-up-button {
+                font-size: 1rem;
+                padding: 0.8rem 1.2rem;
+            }
+            
+            .or-divider::before,
+            .or-divider::after {
+                width: 30%; /* Adjust line length */
+            }
+            
+            .social-login {
+                gap: 1rem;
+            }
+
+            .social-button {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+            
+            .background-elements i {
+                font-size: 3rem; /* Smaller background icons */
+            }
+            .background-elements .fa-comment { top: 5%; left: 0%; }
+            .background-elements .fa-seedling { top: 10%; right: 0%; font-size: 3rem;}
+            .background-elements .fa-book { bottom: 5%; left: 0%; font-size: 3rem;}
+            .background-elements .fa-lightbulb { top: 40%; left: -5%;}
+            .background-elements .fa-robot { bottom: 0%; right: 0%;}
+            .background-elements .fa-brain { top: 0%; right: 10%; font-size: 4rem;}
+            .background-elements .fa-person-praying { bottom: 10%; right: 15%; }
+        }
+
+        @media (max-width: 480px) {
+            .header .logo h1 {
+                display: none; /* Hide text logo on very small screens */
+            }
+            .header-nav {
+                display: none; /* Hide navigation on very small screens */
+            }
+
+            .welcome-text {
+                font-size: 1.2rem;
+            }
+
+            .form-card {
+                padding: 1.5rem;
+            }
+
+            .form-card h2 {
+                font-size: 1.2rem;
+            }
+            
+            .or-divider {
+                font-size: 0.8rem;
+            }
+            .or-divider::before,
+            .or-divider::after {
+                width: 25%;
+            }
+
+            .login-link {
+                font-size: 0.9rem;
+            }
+        }

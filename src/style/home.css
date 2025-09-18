@@ -1,0 +1,254 @@
+ :root {
+            --gradient-start: #d3e4ff;
+            --gradient-end: #b5f8e5;
+            --text-light: #ffffff;
+            --text-dark: #333;
+            --text-secondary: #555;
+            --active-blue: #007BFF;
+            --login-green: #97b495;
+            --create-blue: #6ca5e0;
+            --header-bg: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: linear-gradient(135deg, #00e6f6, #bb50d4);
+        }
+
+        /* --- Header --- */
+        .main-header {
+            background-color: var(--header-bg);
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            flex-shrink: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .logo i {
+            color: var(--create-blue);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-nav a.active,
+        .main-nav a:hover {
+            color: var(--active-blue);
+        }
+
+        .header-actions .cart-icon {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* --- Main Content --- */
+        .main-content {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; /* Left column slightly larger */
+            position: relative;
+            color: var(--text-light);
+            height: 90vh
+        }
+        
+        /* Decorative icons in the background */
+        .deco-icon {
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.15;
+            color: var(--text-light);
+        }
+        .deco-1 { top: 10%; left: 5%; }
+        .deco-2 { top: 15%; right: 45%; }
+        .deco-3 { bottom: 10%; left: 40%; }
+        .deco-4 { bottom: 15%; right: 5%; }
+        
+        /* Left Column: Welcome Section */
+        .welcome-section {
+            padding: 4rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .welcome-icon {
+            width: 150px;
+            height: 150px;
+            border: 3px dashed var(--text-light);
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-icon i {
+            font-size: 5rem;
+        }
+
+        .welcome-section h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .welcome-section p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        .social-icons {
+            margin-top: auto; /* Pushes to the bottom of the flex container */
+            padding-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--text-light);
+            color: var(--active-blue);
+        }
+
+        /* Right Column: Login Section */
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 70%;
+            max-width: 300px;
+        }
+        
+        .login-form .btn {
+            padding: 1rem;
+            border-radius: 8px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .login-form .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        
+        .btn-login {
+            background-color: var(--login-green);
+            color: var(--text-light);
+        }
+        
+        .btn-create {
+            background-color: var(--create-blue);
+            color: var(--text-light);
+        }
+        .btn{
+            text-decoration: none;
+        }
+        
+        .forgot-password {
+            color: var(--text-light);
+            text-align: center;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .forgot-password:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr; /* Stack columns */
+                text-align: center;
+            }
+            .welcome-section {
+                padding: 2rem;
+                align-items: center;
+            }
+            .welcome-icon {
+                margin-bottom: 1.5rem;
+            }
+            .welcome-section h1 {
+                font-size: 2rem;
+            }
+            .welcome-section p {
+                font-size: 1rem;
+            }
+            .social-icons {
+                margin-top: 1.5rem;
+                padding-top: 0;
+            }
+            .login-section {
+                padding: 2rem 0;
+                align-items: flex-start;
+            }
+            .login-form {
+                width: 80%;
+            }
+            .main-nav { display: none; } /* Hide nav on smaller screens */
+        }
