@@ -8,7 +8,6 @@
     box-sizing: border-box;
 }
 .main-con {
-              background: linear-gradient(135deg, #00e6f6, #bb50d4);
 
   width: 100%;
   height: 100vh;
@@ -17,6 +16,7 @@
   align-items: center;
   flex-direction: column;
   margin: 0;
+  overflow: hidden;
 }
 
 .slash-text{
@@ -26,7 +26,7 @@
 }
 
 p{
-    color: white;
+    /* color: white; */
     /* font-size: 2.5em; */
     font-family: "Roboto", sans-serif;
 }
@@ -46,3 +46,40 @@ p{
     100% {background-size:110%}
 }
 
+.center-slash{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 4rem;
+    width: 50%;
+    /* background-color: white; */
+    margin: 0px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* poora screen center */
+  background: #f5f5f5;
+}
+
+.bouncing-logo {
+  width: 120px;
+  height: 120px;
+  animation: bounce 2s infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-50px);
+  }
+  60% {
+    transform: translateY(-25px);
+  }
+}

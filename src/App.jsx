@@ -10,12 +10,29 @@ import MoodTrackerPage from "./pages/MoodTraker"
 import ZenChatBoatPage from "./pages/ZenChatBot"
 import ArticlePage from "./pages/Article"
 import ProfilePage from "./pages/Profile"
+import AboutPage from "./pages/About"
+import ContactPage from "./pages/Contact"
+import HomeArticlePage from "./pages/HomeArticle"
+import AiCounsellerPage from "./pages/AiCounseller"
 
 
 const router = createBrowserRouter([
   {
     path : "/",
     element : <SlashPage/>
+  },
+   {
+    path : "/about",
+    element : <AboutPage/>
+  },
+  {
+    path : "/article",
+    element : <HomeArticlePage
+    />
+  },
+   {
+    path : "/contact",
+    element : <ContactPage/>
   },
   {
     path : "/home",
@@ -40,6 +57,10 @@ const router = createBrowserRouter([
       {
         path:"moodtraker",
         element:<MoodTrackerPage/>
+      },
+      {
+        path:"aicounseller",
+        element:<AiCounsellerPage/>
       },
        {
         path:"zenchatbot",

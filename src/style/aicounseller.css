@@ -1,0 +1,111 @@
+.mic-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Button base */
+.mic-btn {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  color: #222;
+}
+
+/* Hover/active */
+.mic-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+}
+
+.mic-btn:active {
+  transform: translateY(0);
+}
+
+/* Icon */
+.mic-icon {
+  z-index: 3;
+  width: 22px;
+  height: 22px;
+  color: #444;
+}
+
+/* Listening state (red background like YT) */
+.mic-btn.listening {
+  background: linear-gradient(180deg, #ff4b4b, #e33b3b);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(227,59,59,0.35);
+  transform: scale(1.04);
+}
+
+/* Pulsing rings (hidden unless listening) */
+.pulse {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.mic-btn.listening .pulse {
+  opacity: 1;
+}
+
+/* ring variations */
+.pulse-1 {
+  width: 70px;
+  height: 70px;
+  background: rgba(255,75,75,0.12);
+  animation: pulse 1400ms infinite ease-out;
+}
+
+.pulse-2 {
+  width: 90px;
+  height: 90px;
+  background: rgba(255,75,75,0.08);
+  animation: pulse 1800ms infinite ease-out 200ms;
+}
+
+.pulse-3 {
+  width: 110px;
+  height: 110px;
+  background: rgba(255,75,75,0.05);
+  animation: pulse 2200ms infinite ease-out 350ms;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.24;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Small messages */
+.mic-note {
+  font-size: 12px;
+  color: #666;
+}
+
+.mic-error {
+  font-size: 12px;
+  color: #c62828;
+}

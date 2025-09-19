@@ -39,7 +39,7 @@ const LoginPage = () => {
                     progress: undefined,
                     theme: "colored",
                     onClose: () => {
-                        navigate("/dashboard")
+                        navigate("/dashboard/moodtraker")
                     }
                 });
                 onHandleToStoreTokenInLS(data.token)
@@ -70,7 +70,7 @@ const LoginPage = () => {
     return (
         <>
 
-            <header className="header">
+            <header className="header" style={{height:"3rem",width:"100%",backgroundColor:"#F0F8F7"}}>
                 <a href="#" className="logo">
                     <i className="fa-solid fa-brain logo-icon"></i>
                     <h2>MindWell Campus</h2>
@@ -85,9 +85,9 @@ const LoginPage = () => {
                 </nav>
             </header>
 
-            <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Welcome Back User</h1>
+            <h1 style={{ textAlign: "center", marginBottom: "20px", }}>Welcome Back User</h1>
 
-            <main className="main-container">
+            <main className="main-container" >
 
 
                 <div className="form-card">

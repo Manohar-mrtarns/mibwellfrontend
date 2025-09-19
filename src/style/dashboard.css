@@ -182,12 +182,17 @@
             border-color: var(--accent-blue);
         }
 
+        .size{
+            font-size: 1.5rem;
+        }
+
         .feeling-option span {
             font-size: 2.5rem;
         }
 
         .feeling-option p {
             font-weight: 500;
+            color: black;
         }
         
         /* Quick Tools */

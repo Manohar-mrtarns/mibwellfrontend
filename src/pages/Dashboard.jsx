@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
+import image from "../assets/image.png"
 
 const DashBoardPage = () => {
 
     const [userData,setUserData] = useState("")
+    const [mood,setMood] = useState(0)
 
     const getuserDetails = async() => {
         const token = localStorage.getItem("token");
@@ -38,7 +40,8 @@ const DashBoardPage = () => {
             <header className="dashboard-header">
                 <div className="greeting">
                     <span className="greeting-text">Welcome, {userData.name}!</span>
-                    <img src="https://i.pravatar.cc/150?u=priya" alt="User Profile Picture" className="profile-pic" />
+                    { mood == 0 ? <img src={image} alt="User Profile Picture" className="profile-pic" /> : mood == 1 ? <div className="size">😊</div> : mood == 2 ? <div className="size">😐</div> : mood == 3 ? <div className="size">😐</div>: mood == 4 ? <div className="size">😌</div> : ""}
+                    
                 </div>
             </header>
 
@@ -47,19 +50,19 @@ const DashBoardPage = () => {
                     <h2>How are you feeling today?</h2>
                     <div class="feeling-options">
                         <div class="feeling-option">
-                            <span>😊</span>
+                            <span onClick={() => setMood(1)}>😊</span>
                             <p>Happy</p>
                         </div>
                         <div class="feeling-option">
-                            <span>😐</span>
+                            <span onClick={() => setMood(2)}>😐</span>
                             <p>Neutral</p>
                         </div>
                         <div class="feeling-option">
-                            <span>😟</span>
+                            <span onClick={() => setMood(3)}>😟</span>
                             <p>Stressed</p>
                         </div>
                         <div class="feeling-option">
-                            <span>😌</span>
+                            <span onClick={() => setMood(4)}>😌</span>
                             <p>Calm</p>
                         </div>
                     </div>

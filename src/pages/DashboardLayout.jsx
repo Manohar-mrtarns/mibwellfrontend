@@ -11,11 +11,12 @@ const DashBoardLayout = () => {
                 <h1>MindWell Campus</h1>
             </div>
             <ul className="sidebar-nav">
-                <li><NavLink to={"/dashboard/"} end><i className="fa-solid fa-house"></i> Home</NavLink></li>
-                <li><NavLink to={"/dashboard/moodtraker"}><i className="fa-solid fa-folder-open"></i> Mood Tracker</NavLink></li>
+                {/* <li><NavLink to={"/dashboard/"} end><i className="fa-solid fa-house"></i> Home</NavLink></li> */}
+                <li><NavLink to={"/dashboard/moodtraker"}><i className="fa-solid fa-folder-open"></i> Home</NavLink></li>
                 <li><NavLink to={"/dashboard/zenchatbot"}><i className="fa-solid fa-robot"></i> ZenBot</NavLink></li>
-                <li><NavLink to={"/dashboard/articles"}><i className="fa-solid fa-book-open"></i>Article</NavLink></li>
-                <li><NavLink to={"/dashboard/profile"}><i className="fa-solid fa-user"></i> Profile</NavLink></li>
+                <li><NavLink to={"/dashboard/aicounseller"}><i className="fa-solid fa-user"></i> Ai Counseller</NavLink></li>
+                {/* <li><NavLink to={"/dashboard/articles"}><i className="fa-solid fa-book-open"></i>Article</NavLink></li>
+                <li><NavLink to={"/dashboard/profile"}><i className="fa-solid fa-user"></i> Profile</NavLink></li> */}
             </ul>
             </nav>
             <main className="container-box-every">

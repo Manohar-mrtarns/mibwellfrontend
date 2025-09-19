@@ -14,15 +14,16 @@ const HomePage = () => {
             </div>
             <nav className="main-nav">
                 <ul>
-                    <li><a href="#" className="active">Home</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><NavLink to={"/home"} className="active">Home</NavLink></li>
+                    <li><NavLink to={"/article"}>Article</NavLink></li>
+                    <li><NavLink to={"/about"}>About</NavLink></li>
+                    <li><NavLink to={"/contact"}>Contact</NavLink></li>
+                    <li><NavLink to={"/signup"}>Signup</NavLink></li>
                 </ul>
             </nav>
-            <div className="header-actions">
-                <i className="fa-solid fa-shopping-bag cart-icon"></i>
-            </div>
+            <NavLink to={"/login"} className="header-actions" style={{height:"100%",width:"100px",backgroundColor:"#00e6f6",borderRadius:"10px",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",textDecoration:"none"}}>
+                Login
+            </NavLink>
         </header>
 
         <main className="main-content">
@@ -47,8 +48,8 @@ const HomePage = () => {
 
             <section className="login-section">
                 <form className="login-form">
-                    <NavLink to={"/login"} className="btn btn-login">Login</NavLink>
-                    <NavLink to={"/signup"} className="btn btn-create">Create Account</NavLink>
+                    <NavLink to={"/login"} className="btn btn-login" style={{backgroundColor:"white",color:"black"}}>Login</NavLink>
+                    <NavLink to={"/signup"} className="btn btn-create" style={{backgroundColor:"white",color:"black"}}>Create Account</NavLink>
                     <a href="#" className="forgot-password">Forgot Password?</a>
                 </form>
             </section>

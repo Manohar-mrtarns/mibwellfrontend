@@ -13,7 +13,7 @@ const BackEndContext = ({children}) => {
         setToken(token)
     }
     return (
-        <BackendContext.Provider value={{onHandleToStoreTokenInLS}}>
+        <BackendContext.Provider value={{onHandleToStoreTokenInLS,token}}>
             {children}
         </BackendContext.Provider>
     )
